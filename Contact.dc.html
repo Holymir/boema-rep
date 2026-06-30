@@ -1,0 +1,227 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Archivo:ital,wght@0,400;0,500;0,600;0,700;0,800;0,900&family=IBM+Plex+Sans:wght@400;500;600;700&family=IBM+Plex+Mono:wght@500;600&display=swap" rel="stylesheet">
+  <style>
+    *{box-sizing:border-box;}body{margin:0;background:#fff;}
+    .mpb-input{font-family:'IBM Plex Sans',sans-serif;font-size:15px;color:#15181B;width:100%;padding:13px 14px;border:1px solid #D4D8DB;background:#fff;outline:none;transition:border-color .15s;}
+    .mpb-input:focus{border-color:#E00000;}
+    .mpb-input::placeholder{color:#A6AEB3;}
+  </style>
+</helmet>
+<div style="font-family:'IBM Plex Sans',sans-serif;color:#15181B;background:#fff;">
+  <dc-import name="Header" active="contact" hint-size="100%,112px"></dc-import>
+
+  <!-- PAGE HEAD -->
+  <section style="background:#15181B;color:#fff;">
+    <div style="max-width:1280px;margin:0 auto;padding:62px 32px 66px;">
+      <div style="display:flex;align-items:center;gap:10px;font-size:12.5px;color:#8A949A;margin-bottom:26px;">
+        <a href="Index.dc.html" style="color:#8A949A;text-decoration:none;" style-hover="color:#fff;">{{ crumbHome }}</a>
+        <span>/</span><span style="color:#E00000;font-weight:600;">{{ crumbHere }}</span>
+      </div>
+      <div style="display:grid;grid-template-columns:1.3fr 1fr;gap:48px;align-items:end;">
+        <h1 style="font-family:'Archivo',sans-serif;font-weight:900;font-size:54px;line-height:0.98;letter-spacing:-0.02em;margin:0;text-wrap:balance;">{{ headTitle }}</h1>
+        <p style="font-size:16.5px;line-height:1.7;color:#C9D0D4;margin:0;">{{ headSub }}</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- FORM + DETAILS -->
+  <section style="max-width:1280px;margin:0 auto;padding:72px 32px;">
+    <div style="display:grid;grid-template-columns:1.4fr 1fr;gap:64px;align-items:start;">
+      <!-- FORM -->
+      <div>
+        <div style="display:flex;align-items:center;gap:13px;margin-bottom:24px;">
+          <span style="width:30px;height:2px;background:#E00000;"></span>
+          <span style="font-size:12px;font-weight:700;letter-spacing:0.12em;text-transform:uppercase;color:#8A949A;">{{ formEyebrow }}</span>
+        </div>
+        <sc-if value="{{ sent }}" hint-placeholder-val="{{ false }}">
+          <div style="border:1px solid #E2E4E6;padding:48px 40px;background:#F4F5F6;">
+            <div style="width:54px;height:54px;background:#E00000;color:#fff;display:flex;align-items:center;justify-content:center;font-size:26px;font-weight:800;margin-bottom:22px;">✓</div>
+            <h2 style="font-family:'Archivo',sans-serif;font-weight:800;font-size:28px;margin:0 0 12px;">{{ sentTitle }}</h2>
+            <p style="font-size:16px;line-height:1.7;color:#3A4146;margin:0 0 26px;max-width:440px;">{{ sentBody }}</p>
+            <button onClick="{{ reset }}" style="background:#15181B;color:#fff;border:none;cursor:pointer;font-family:'Archivo',sans-serif;font-weight:700;font-size:13px;letter-spacing:0.04em;text-transform:uppercase;padding:14px 24px;" style-hover="background:#E00000;">{{ sentBtn }}</button>
+          </div>
+        </sc-if>
+        <sc-if value="{{ notSent }}" hint-placeholder-val="{{ true }}">
+          <div style="display:flex;flex-direction:column;gap:18px;">
+            <div style="display:grid;grid-template-columns:1fr 1fr;gap:18px;">
+              <div>
+                <label style="display:block;font-size:12px;font-weight:600;letter-spacing:0.04em;color:#5A646B;margin-bottom:7px;text-transform:uppercase;">{{ lblName }} *</label>
+                <input class="mpb-input" value="{{ fName }}" onInput="{{ onName }}" placeholder="{{ phName }}">
+              </div>
+              <div>
+                <label style="display:block;font-size:12px;font-weight:600;letter-spacing:0.04em;color:#5A646B;margin-bottom:7px;text-transform:uppercase;">{{ lblCompany }}</label>
+                <input class="mpb-input" value="{{ fCompany }}" onInput="{{ onCompany }}" placeholder="{{ phCompany }}">
+              </div>
+            </div>
+            <div style="display:grid;grid-template-columns:1fr 1fr;gap:18px;">
+              <div>
+                <label style="display:block;font-size:12px;font-weight:600;letter-spacing:0.04em;color:#5A646B;margin-bottom:7px;text-transform:uppercase;">{{ lblEmail }} *</label>
+                <input class="mpb-input" value="{{ fEmail }}" onInput="{{ onEmail }}" placeholder="{{ phEmail }}">
+              </div>
+              <div>
+                <label style="display:block;font-size:12px;font-weight:600;letter-spacing:0.04em;color:#5A646B;margin-bottom:7px;text-transform:uppercase;">{{ lblPhone }}</label>
+                <input class="mpb-input" value="{{ fPhone }}" onInput="{{ onPhone }}" placeholder="{{ phPhone }}">
+              </div>
+            </div>
+            <div>
+              <label style="display:block;font-size:12px;font-weight:600;letter-spacing:0.04em;color:#5A646B;margin-bottom:7px;text-transform:uppercase;">{{ lblInterest }}</label>
+              <select class="mpb-input" value="{{ fInterest }}" onChange="{{ onInterest }}">
+                <sc-for list="{{ interests }}" as="o" hint-placeholder-count="4">
+                  <option value="{{ o }}">{{ o }}</option>
+                </sc-for>
+              </select>
+            </div>
+            <div>
+              <label style="display:block;font-size:12px;font-weight:600;letter-spacing:0.04em;color:#5A646B;margin-bottom:7px;text-transform:uppercase;">{{ lblMessage }} *</label>
+              <textarea class="mpb-input" rows="5" value="{{ fMessage }}" onInput="{{ onMessage }}" placeholder="{{ phMessage }}" style="resize:vertical;line-height:1.6;"></textarea>
+            </div>
+            <sc-if value="{{ showError }}" hint-placeholder-val="{{ false }}">
+              <div style="background:#FDECEC;border:1px solid #F5C2C2;padding:12px 15px;font-size:13.5px;color:#B80000;font-weight:500;">{{ errorMsg }}</div>
+            </sc-if>
+            <div style="display:flex;align-items:center;gap:20px;flex-wrap:wrap;margin-top:6px;">
+              <button onClick="{{ submit }}" style="background:#E00000;color:#fff;border:none;cursor:pointer;font-family:'Archivo',sans-serif;font-weight:700;font-size:15px;letter-spacing:0.03em;text-transform:uppercase;padding:17px 34px;" style-hover="background:#B80000;">{{ submitLabel }}</button>
+              <span style="font-size:12.5px;color:#8A949A;">{{ privacyNote }}</span>
+            </div>
+          </div>
+        </sc-if>
+      </div>
+
+      <!-- DETAILS -->
+      <div style="display:flex;flex-direction:column;gap:2px;background:#E2E4E6;border:1px solid #E2E4E6;">
+        <div style="background:#15181B;color:#fff;padding:32px 30px;">
+          <div style="display:inline-flex;align-items:center;gap:10px;border:1px solid #3A4146;padding:8px 13px;margin-bottom:22px;">
+            <span style="width:7px;height:7px;background:#E00000;"></span>
+            <span style="font-size:10px;font-weight:700;letter-spacing:0.1em;text-transform:uppercase;color:#C9D0D4;">{{ officialLabel }}</span>
+            <span style="font-family:'Archivo',sans-serif;font-weight:900;font-size:14px;">BÖMA</span>
+          </div>
+          <sc-for list="{{ details }}" as="d" hint-placeholder-count="3">
+            <div style="margin-bottom:22px;">
+              <div style="font-size:11px;font-weight:700;letter-spacing:0.1em;text-transform:uppercase;color:#8A949A;margin-bottom:7px;">{{ d.label }}</div>
+              <div style="font-size:15.5px;line-height:1.55;color:#fff;font-weight:500;">{{ d.value }}</div>
+            </div>
+          </sc-for>
+        </div>
+        <div style="background:#fff;padding:28px 30px;">
+          <div style="font-size:11px;font-weight:700;letter-spacing:0.1em;text-transform:uppercase;color:#8A949A;margin-bottom:14px;">{{ hoursLabel }}</div>
+          <sc-for list="{{ hours }}" as="h" hint-placeholder-count="2">
+            <div style="display:flex;justify-content:space-between;font-size:14.5px;padding:6px 0;border-bottom:1px solid #F0F1F2;">
+              <span style="color:#5A646B;">{{ h.day }}</span>
+              <span style="font-weight:600;color:#15181B;">{{ h.time }}</span>
+            </div>
+          </sc-for>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <dc-import name="Footer" hint-size="100%,400px"></dc-import>
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props="{&quot;$preview&quot;:{&quot;width&quot;:1280,&quot;height&quot;:900}}">
+const CSTR = {
+  bg: {
+    crumbHome: "Начало", crumbHere: "Контакти",
+    headTitle: "Заявка за оферта и контакт",
+    headSub: "Опишете приложението си и нашият инженерен екип ще се свърже с вас с предложение, съобразено с вашите изисквания.",
+    formEyebrow: "Изпратете запитване",
+    lblName: "Име", phName: "Вашето име",
+    lblCompany: "Фирма", phCompany: "Име на фирмата",
+    lblEmail: "Имейл", phEmail: "you@company.bg",
+    lblPhone: "Телефон", phPhone: "+359 ...",
+    lblInterest: "Продукт / интерес",
+    interests: ["Modu-System конструктор", "Конвейерни ленти", "Ролкови пътеки", "Линейна техника / PV-40", "Монтажни работни места", "Предпазни огради / асансьори", "Друго"],
+    lblMessage: "Съобщение", phMessage: "Опишете приложението, размери, скорости, количества...",
+    submitLabel: "Изпрати запитване",
+    privacyNote: "Изпращайки, приемате нашата политика за поверителност.",
+    errorMsg: "Моля попълнете име, валиден имейл и съобщение.",
+    sentTitle: "Благодарим — запитването е изпратено!",
+    sentBody: "Получихме вашето запитване. Нашият екип ще се свърже с вас в рамките на един работен ден с предложение.",
+    sentBtn: "Ново запитване",
+    officialLabel: "Официален дистрибутор на",
+    details: [
+      { label: "Адрес", value: "бул. Цариградско шосе 115\n1784 София, България" },
+      { label: "Телефон", value: "+359 2 999 99 99" },
+      { label: "Имейл", value: "office@metalparts.bg" },
+    ],
+    hoursLabel: "Работно време",
+    hours: [
+      { day: "Понеделник – Петък", time: "08:30 – 17:30" },
+      { day: "Събота – Неделя", time: "Затворено" },
+    ],
+  },
+  en: {
+    crumbHome: "Home", crumbHere: "Contact",
+    headTitle: "Request a quote & contact",
+    headSub: "Describe your application and our engineering team will get back to you with a proposal tailored to your requirements.",
+    formEyebrow: "Send an inquiry",
+    lblName: "Name", phName: "Your name",
+    lblCompany: "Company", phCompany: "Company name",
+    lblEmail: "Email", phEmail: "you@company.com",
+    lblPhone: "Phone", phPhone: "+359 ...",
+    lblInterest: "Product / interest",
+    interests: ["Modu-System kit", "Conveyor belts", "Roller conveyors", "Linear technology / PV-40", "Assembly workstations", "Protective fences / lifts", "Other"],
+    lblMessage: "Message", phMessage: "Describe the application, dimensions, speeds, quantities...",
+    submitLabel: "Send inquiry",
+    privacyNote: "By sending, you accept our privacy policy.",
+    errorMsg: "Please fill in your name, a valid email and a message.",
+    sentTitle: "Thank you — your inquiry is on its way!",
+    sentBody: "We've received your inquiry. Our team will get back to you within one business day with a proposal.",
+    sentBtn: "New inquiry",
+    officialLabel: "Official distributor of",
+    details: [
+      { label: "Address", value: "115 Tsarigradsko Shose Blvd.\n1784 Sofia, Bulgaria" },
+      { label: "Phone", value: "+359 2 999 99 99" },
+      { label: "Email", value: "office@metalparts.bg" },
+    ],
+    hoursLabel: "Office hours",
+    hours: [
+      { day: "Monday – Friday", time: "08:30 – 17:30" },
+      { day: "Saturday – Sunday", time: "Closed" },
+    ],
+  },
+};
+
+class Component extends DCLogic {
+  state = { name: "", company: "", email: "", phone: "", interest: "", message: "", sent: false, error: false };
+
+  set(field, e) { this.setState({ [field]: e.target.value, error: false }); }
+
+  submit() {
+    const { name, email, message } = this.state;
+    const okEmail = /.+@.+\..+/.test(email);
+    if (!name.trim() || !okEmail || !message.trim()) { this.setState({ error: true }); return; }
+    this.setState({ sent: true, error: false });
+  }
+
+  reset() { this.setState({ name: "", company: "", email: "", phone: "", interest: "", message: "", sent: false, error: false }); }
+
+  renderVals() {
+    const lang = ((typeof localStorage !== "undefined" && localStorage.getItem("mpb_lang")) || "bg") === "en" ? "en" : "bg";
+    const t = CSTR[lang];
+    return {
+      ...t,
+      sent: this.state.sent, notSent: !this.state.sent,
+      showError: this.state.error,
+      fName: this.state.name, fCompany: this.state.company, fEmail: this.state.email,
+      fPhone: this.state.phone, fInterest: this.state.interest, fMessage: this.state.message,
+      onName: (e) => this.set("name", e), onCompany: (e) => this.set("company", e),
+      onEmail: (e) => this.set("email", e), onPhone: (e) => this.set("phone", e),
+      onInterest: (e) => this.set("interest", e), onMessage: (e) => this.set("message", e),
+      submit: () => this.submit(), reset: () => this.reset(),
+    };
+  }
+}
+</script>
+</body>
+</html>

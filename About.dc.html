@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Archivo:ital,wght@0,400;0,500;0,600;0,700;0,800;0,900&family=IBM+Plex+Sans:wght@400;500;600;700&family=IBM+Plex+Mono:wght@500;600&display=swap" rel="stylesheet">
+  <style>*{box-sizing:border-box;}body{margin:0;background:#fff;}</style>
+</helmet>
+<div style="font-family:'IBM Plex Sans',sans-serif;color:#15181B;background:#fff;">
+  <dc-import name="Header" active="about" hint-size="100%,112px"></dc-import>
+
+  <!-- PAGE HEAD -->
+  <section style="background:#15181B;color:#fff;">
+    <div style="max-width:1280px;margin:0 auto;padding:62px 32px 66px;">
+      <div style="display:flex;align-items:center;gap:10px;font-size:12.5px;color:#8A949A;margin-bottom:26px;">
+        <a href="Index.dc.html" style="color:#8A949A;text-decoration:none;" style-hover="color:#fff;">{{ crumbHome }}</a>
+        <span>/</span><span style="color:#E00000;font-weight:600;">{{ crumbHere }}</span>
+      </div>
+      <div style="display:grid;grid-template-columns:1.3fr 1fr;gap:48px;align-items:end;">
+        <h1 style="font-family:'Archivo',sans-serif;font-weight:900;font-size:54px;line-height:0.98;letter-spacing:-0.02em;margin:0;text-wrap:balance;">{{ headTitle }}</h1>
+        <p style="font-size:16.5px;line-height:1.7;color:#C9D0D4;margin:0;">{{ headSub }}</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- STORY -->
+  <section style="max-width:1280px;margin:0 auto;padding:80px 32px;">
+    <div style="display:grid;grid-template-columns:1fr 1fr;gap:64px;align-items:center;">
+      <div style="background-color:#D8DCDF;background-image:url('assets/workplace.png');background-size:cover;background-position:center;min-height:440px;"></div>
+      <div>
+        <div style="display:flex;align-items:center;gap:13px;margin-bottom:20px;">
+          <span style="width:30px;height:2px;background:#E00000;"></span>
+          <span style="font-size:12px;font-weight:700;letter-spacing:0.12em;text-transform:uppercase;color:#8A949A;">{{ storyEyebrow }}</span>
+        </div>
+        <h2 style="font-family:'Archivo',sans-serif;font-weight:800;font-size:34px;line-height:1.08;margin:0 0 22px;text-wrap:balance;">{{ storyTitle }}</h2>
+        <p style="font-size:16px;line-height:1.75;color:#3A4146;margin:0 0 18px;">{{ storyP1 }}</p>
+        <p style="font-size:16px;line-height:1.75;color:#3A4146;margin:0 0 30px;">{{ storyP2 }}</p>
+        <div style="display:inline-flex;align-items:center;gap:12px;border:1px solid #E2E4E6;padding:14px 18px;background:#F4F5F6;">
+          <span style="width:9px;height:9px;background:#E00000;"></span>
+          <span style="font-size:11px;font-weight:700;letter-spacing:0.1em;text-transform:uppercase;color:#5A646B;">{{ badgeLabel }}</span>
+          <span style="font-family:'Archivo',sans-serif;font-weight:900;font-size:18px;color:#15181B;">BÖMA</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- STATS -->
+  <section style="background:#15181B;color:#fff;">
+    <div style="max-width:1280px;margin:0 auto;padding:0 32px;">
+      <div style="display:grid;grid-template-columns:repeat(4,1fr);">
+        <sc-for list="{{ stats }}" as="s" hint-placeholder-count="4">
+          <div style="padding:54px 16px 54px 0;border-right:1px solid #2A3136;">
+            <div style="font-family:'Archivo',sans-serif;font-weight:900;font-size:46px;color:#E00000;line-height:1;">{{ s.value }}</div>
+            <div style="font-size:14px;color:#C9D0D4;margin-top:12px;line-height:1.4;">{{ s.label }}</div>
+          </div>
+        </sc-for>
+      </div>
+    </div>
+  </section>
+
+  <!-- VALUES -->
+  <section style="max-width:1280px;margin:0 auto;padding:80px 32px;">
+    <div style="display:flex;align-items:center;gap:13px;margin-bottom:18px;">
+      <span style="width:30px;height:2px;background:#E00000;"></span>
+      <span style="font-size:12px;font-weight:700;letter-spacing:0.12em;text-transform:uppercase;color:#8A949A;">{{ valEyebrow }}</span>
+    </div>
+    <h2 style="font-family:'Archivo',sans-serif;font-weight:800;font-size:36px;line-height:1.05;margin:0 0 44px;max-width:640px;text-wrap:balance;">{{ valTitle }}</h2>
+    <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:2px;background:#E2E4E6;border:1px solid #E2E4E6;">
+      <sc-for list="{{ values }}" as="v" hint-placeholder-count="3">
+        <div style="background:#fff;padding:36px 30px 40px;">
+          <div style="font-family:'IBM Plex Mono',monospace;font-weight:600;font-size:12px;color:#E00000;margin-bottom:18px;">{{ v.idx }}</div>
+          <h3 style="font-family:'Archivo',sans-serif;font-weight:700;font-size:20px;margin:0 0 11px;">{{ v.title }}</h3>
+          <p style="font-size:14.5px;line-height:1.7;color:#5A646B;margin:0;">{{ v.desc }}</p>
+        </div>
+      </sc-for>
+    </div>
+  </section>
+
+  <!-- CERTIFICATION -->
+  <section style="background:#F4F5F6;">
+    <div style="max-width:1280px;margin:0 auto;padding:64px 32px;display:flex;align-items:center;gap:48px;flex-wrap:wrap;">
+      <div style="width:120px;height:120px;background:#fff;border:1px solid #E2E4E6;display:flex;flex-direction:column;align-items:center;justify-content:center;flex:none;">
+        <span style="font-family:'Archivo',sans-serif;font-weight:900;font-size:26px;color:#E00000;line-height:1;">ISO</span>
+        <span style="font-family:'Archivo',sans-serif;font-weight:800;font-size:18px;color:#15181B;margin-top:4px;">9001</span>
+      </div>
+      <div style="flex:1;min-width:280px;">
+        <h3 style="font-family:'Archivo',sans-serif;font-weight:800;font-size:26px;margin:0 0 10px;">{{ certTitle }}</h3>
+        <p style="font-size:15.5px;line-height:1.7;color:#3A4146;margin:0;max-width:620px;">{{ certBody }}</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA -->
+  <section style="background:#E00000;">
+    <div style="max-width:1280px;margin:0 auto;padding:60px 32px;display:flex;align-items:center;justify-content:space-between;gap:40px;flex-wrap:wrap;">
+      <h2 style="font-family:'Archivo',sans-serif;font-weight:900;font-size:34px;color:#fff;margin:0;max-width:640px;text-wrap:balance;">{{ ctaTitle }}</h2>
+      <a href="Contact.dc.html" style="background:#fff;color:#E00000;text-decoration:none;font-family:'Archivo',sans-serif;font-weight:800;font-size:15px;letter-spacing:0.03em;text-transform:uppercase;padding:18px 32px;white-space:nowrap;" style-hover="background:#15181B;color:#fff;">{{ ctaBtn }}</a>
+    </div>
+  </section>
+
+  <dc-import name="Footer" hint-size="100%,400px"></dc-import>
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props="{&quot;$preview&quot;:{&quot;width&quot;:1280,&quot;height&quot;:900}}">
+const ASTR = {
+  bg: {
+    crumbHome: "Начало", crumbHere: "За нас",
+    headTitle: "Официалният глас на BÖMA в България и Европа",
+    headSub: "Metal Parts Bulgaria свързва австрийското машиностроене с местните производители — с инженерна компетентност, оригинални части и близък сервиз.",
+    storyEyebrow: "Нашата история",
+    storyTitle: "Австрийско инженерство, доставено локално",
+    storyP1: "MPB е основана, за да донесе доказаната конвейерна техника на BÖMA до българските и европейските производители — без езикови бариери, дълги срокове или липса на поддръжка.",
+    storyP2: "Като официален дистрибутор работим директно със завода в Алберсшвенде, Форарлберг. Така гарантираме оригинални компоненти, актуална документация и решения, проектирани точно за вашето приложение.",
+    badgeLabel: "Официален дистрибутор на",
+    stats: [
+      { value: "1953", label: "Година на основаване на BÖMA" },
+      { value: "100%", label: "Оригинални части и документация" },
+      { value: "BG+EU", label: "Покритие на доставка и сервиз" },
+      { value: "ISO", label: "Сертифицирано производство 9001" },
+    ],
+    valEyebrow: "Какво ни отличава",
+    valTitle: "Принципи, които стоят зад всяка инсталация",
+    values: [
+      { idx: "01", title: "Инженерна компетентност", desc: "Технически обучен екип, който проектира решението заедно с вас — не просто продава каталог." },
+      { idx: "02", title: "Близост и сервиз", desc: "Местен контакт, бърза реакция, монтаж и поддръжка на място из цяла България и ЕС." },
+      { idx: "03", title: "Качество без компромис", desc: "Само оригинални компоненти на BÖMA, произведени по ISO 9001 в Австрия." },
+    ],
+    certTitle: "Сертифицирано качество ISO 9001",
+    certBody: "Цялата гама на BÖMA се произвежда в Алберсшвенде, Австрия, по сертифицирана система за управление на качеството ISO 9001 — гаранция за прецизност, проследимост и надеждност на всеки компонент, който доставяме.",
+    ctaTitle: "Да изградим вашето следващо решение заедно.",
+    ctaBtn: "Свържете се с нас",
+  },
+  en: {
+    crumbHome: "Home", crumbHere: "About",
+    headTitle: "The official voice of BÖMA in Bulgaria and Europe",
+    headSub: "Metal Parts Bulgaria connects Austrian mechanical engineering with local manufacturers — with engineering competence, genuine parts and close service.",
+    storyEyebrow: "Our story",
+    storyTitle: "Austrian engineering, delivered locally",
+    storyP1: "MPB was founded to bring BÖMA's proven conveyor technology to Bulgarian and European manufacturers — without language barriers, long lead times or missing support.",
+    storyP2: "As the official distributor we work directly with the factory in Alberschwende, Vorarlberg. That guarantees genuine components, up-to-date documentation and solutions engineered exactly for your application.",
+    badgeLabel: "Official distributor of",
+    stats: [
+      { value: "1953", label: "Year BÖMA was founded" },
+      { value: "100%", label: "Genuine parts and documentation" },
+      { value: "BG+EU", label: "Delivery and service coverage" },
+      { value: "ISO", label: "ISO 9001 certified production" },
+    ],
+    valEyebrow: "What sets us apart",
+    valTitle: "Principles behind every installation",
+    values: [
+      { idx: "01", title: "Engineering competence", desc: "A technically trained team that designs the solution with you — not just sells a catalog." },
+      { idx: "02", title: "Proximity and service", desc: "A local contact, fast response, on-site installation and maintenance across Bulgaria and the EU." },
+      { idx: "03", title: "Quality without compromise", desc: "Only genuine BÖMA components, manufactured to ISO 9001 in Austria." },
+    ],
+    certTitle: "ISO 9001 certified quality",
+    certBody: "The entire BÖMA range is manufactured in Alberschwende, Austria, under an ISO 9001 certified quality management system — a guarantee of precision, traceability and reliability in every component we deliver.",
+    ctaTitle: "Let's build your next solution together.",
+    ctaBtn: "Get in touch",
+  },
+};
+
+class Component extends DCLogic {
+  renderVals() {
+    const lang = ((typeof localStorage !== "undefined" && localStorage.getItem("mpb_lang")) || "bg") === "en" ? "en" : "bg";
+    return { ...ASTR[lang] };
+  }
+}
+</script>
+</body>
+</html>

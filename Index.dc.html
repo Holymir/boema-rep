@@ -1,0 +1,294 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Archivo:ital,wght@0,400;0,500;0,600;0,700;0,800;0,900&family=IBM+Plex+Sans:wght@400;500;600;700&family=IBM+Plex+Mono:wght@500;600&display=swap" rel="stylesheet">
+  <style>
+    *{box-sizing:border-box;}
+    body{margin:0;background:#fff;}
+  </style>
+</helmet>
+<div style="font-family:'IBM Plex Sans',sans-serif;color:#15181B;background:#fff;">
+  <template id="__bundler_thumbnail">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><rect width="100" height="100" fill="#15181B"/><rect x="30" y="30" width="40" height="40" fill="#E00000"/><text x="50" y="58" font-family="Archivo,sans-serif" font-weight="900" font-size="22" fill="#fff" text-anchor="middle">M</text></svg>
+  </template>
+  <dc-import name="Header" active="home" hint-size="100%,112px"></dc-import>
+
+  <!-- HERO -->
+  <section style="position:relative;background:#15181B;overflow:hidden;">
+    <div style="position:absolute;inset:0;background-image:url('assets/hero.png');background-size:cover;background-position:center;opacity:0.55;"></div>
+    <div style="position:absolute;inset:0;background:linear-gradient(90deg,#15181B 0%,rgba(21,24,27,0.82) 48%,rgba(21,24,27,0.35) 100%);"></div>
+    <div style="position:relative;max-width:1280px;margin:0 auto;padding:96px 32px 104px;">
+      <div style="max-width:720px;">
+        <div style="display:inline-flex;align-items:center;gap:11px;border:1px solid #3A4146;padding:9px 15px;margin-bottom:30px;">
+          <span style="width:7px;height:7px;background:#E00000;"></span>
+          <span style="font-size:12px;font-weight:600;letter-spacing:0.1em;text-transform:uppercase;color:#C9D0D4;">{{ heroBadge }}</span>
+        </div>
+        <h1 style="font-family:'Archivo',sans-serif;font-weight:900;font-size:64px;line-height:0.98;letter-spacing:-0.02em;color:#fff;margin:0 0 24px;text-wrap:balance;">{{ heroTitle }}</h1>
+        <p style="font-size:19px;line-height:1.6;color:#C9D0D4;max-width:560px;margin:0 0 38px;">{{ heroSub }}</p>
+        <div style="display:flex;gap:14px;flex-wrap:wrap;">
+          <a href="Contact.dc.html" style="background:#E00000;color:#fff;text-decoration:none;font-family:'Archivo',sans-serif;font-weight:700;font-size:15px;letter-spacing:0.03em;text-transform:uppercase;padding:17px 30px;" style-hover="background:#B80000;">{{ heroCta1 }}</a>
+          <a href="Products.dc.html" style="background:transparent;color:#fff;text-decoration:none;font-family:'Archivo',sans-serif;font-weight:700;font-size:15px;letter-spacing:0.03em;text-transform:uppercase;padding:17px 30px;border:1px solid #4A5156;" style-hover="border-color:#fff;">{{ heroCta2 }}</a>
+        </div>
+      </div>
+    </div>
+    <!-- stat strip -->
+    <div style="position:relative;border-top:1px solid #2A3136;background:rgba(10,12,14,0.6);">
+      <div style="max-width:1280px;margin:0 auto;padding:0 32px;display:grid;grid-template-columns:repeat(4,1fr);">
+        <sc-for list="{{ heroStats }}" as="s" hint-placeholder-count="4">
+          <div style="padding:26px 8px 26px 0;border-right:1px solid #2A3136;">
+            <div style="font-family:'Archivo',sans-serif;font-weight:800;font-size:30px;color:#fff;line-height:1;">{{ s.value }}</div>
+            <div style="font-size:12.5px;color:#9AA4AB;margin-top:8px;letter-spacing:0.02em;">{{ s.label }}</div>
+          </div>
+        </sc-for>
+      </div>
+    </div>
+  </section>
+
+  <!-- INTRO -->
+  <section style="max-width:1280px;margin:0 auto;padding:88px 32px 24px;">
+    <div style="display:grid;grid-template-columns:0.9fr 1.1fr;gap:64px;align-items:end;">
+      <div>
+        <div style="display:flex;align-items:center;gap:13px;margin-bottom:20px;">
+          <span style="font-family:'IBM Plex Mono',monospace;font-weight:600;font-size:13px;color:#E00000;">01</span>
+          <span style="width:30px;height:2px;background:#E00000;"></span>
+          <span style="font-size:12px;font-weight:700;letter-spacing:0.12em;text-transform:uppercase;color:#8A949A;">{{ introEyebrow }}</span>
+        </div>
+        <h2 style="font-family:'Archivo',sans-serif;font-weight:800;font-size:40px;line-height:1.05;letter-spacing:-0.01em;margin:0;text-wrap:balance;">{{ introTitle }}</h2>
+      </div>
+      <p style="font-size:17px;line-height:1.75;color:#3A4146;margin:0;">{{ introBody }}</p>
+    </div>
+  </section>
+
+  <!-- PRODUCT RANGE -->
+  <section style="max-width:1280px;margin:0 auto;padding:64px 32px 32px;">
+    <div style="display:flex;align-items:flex-end;justify-content:space-between;gap:24px;margin-bottom:34px;">
+      <div>
+        <div style="display:flex;align-items:center;gap:13px;margin-bottom:18px;">
+          <span style="font-family:'IBM Plex Mono',monospace;font-weight:600;font-size:13px;color:#E00000;">02</span>
+          <span style="width:30px;height:2px;background:#E00000;"></span>
+          <span style="font-size:12px;font-weight:700;letter-spacing:0.12em;text-transform:uppercase;color:#8A949A;">{{ rangeEyebrow }}</span>
+        </div>
+        <h2 style="font-family:'Archivo',sans-serif;font-weight:800;font-size:38px;line-height:1.05;margin:0;">{{ rangeTitle }}</h2>
+      </div>
+      <a href="Products.dc.html" style="color:#15181B;text-decoration:none;font-family:'Archivo',sans-serif;font-weight:700;font-size:13px;letter-spacing:0.04em;text-transform:uppercase;border-bottom:2px solid #E00000;padding-bottom:4px;white-space:nowrap;" style-hover="color:#E00000;">{{ rangeLink }}</a>
+    </div>
+    <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:2px;background:#E2E4E6;border:1px solid #E2E4E6;">
+      <sc-for list="{{ products }}" as="p" hint-placeholder-count="6">
+        <a href="Products.dc.html" style="background:#fff;text-decoration:none;color:inherit;display:flex;flex-direction:column;" style-hover="background:#F4F5F6;">
+          <div style="aspect-ratio:16/10;background-color:#D8DCDF;background-image:{{ p.bg }};background-size:cover;background-position:center;"></div>
+          <div style="padding:24px 24px 28px;">
+            <div style="font-family:'IBM Plex Mono',monospace;font-size:11px;font-weight:600;letter-spacing:0.08em;color:#E00000;margin-bottom:10px;">{{ p.tag }}</div>
+            <h3 style="font-family:'Archivo',sans-serif;font-weight:700;font-size:20px;margin:0 0 9px;">{{ p.title }}</h3>
+            <p style="font-size:14px;line-height:1.6;color:#5A646B;margin:0;">{{ p.desc }}</p>
+          </div>
+        </a>
+      </sc-for>
+    </div>
+  </section>
+
+  <!-- MODU-SYSTEM FEATURE -->
+  <section style="background:#F4F5F6;margin-top:88px;">
+    <div style="max-width:1280px;margin:0 auto;padding:0;display:grid;grid-template-columns:1fr 1fr;">
+      <div style="background-color:#15181B;background-image:url('assets/modu.png');background-size:cover;background-position:center;min-height:520px;"></div>
+      <div style="padding:88px 72px;">
+        <div style="display:flex;align-items:center;gap:13px;margin-bottom:20px;">
+          <span style="font-family:'IBM Plex Mono',monospace;font-weight:600;font-size:13px;color:#E00000;">03</span>
+          <span style="width:30px;height:2px;background:#E00000;"></span>
+          <span style="font-size:12px;font-weight:700;letter-spacing:0.12em;text-transform:uppercase;color:#8A949A;">{{ moduEyebrow }}</span>
+        </div>
+        <h2 style="font-family:'Archivo',sans-serif;font-weight:800;font-size:42px;line-height:1.03;letter-spacing:-0.01em;margin:0 0 22px;text-wrap:balance;">{{ moduTitle }}</h2>
+        <p style="font-size:16.5px;line-height:1.75;color:#3A4146;margin:0 0 30px;">{{ moduBody }}</p>
+        <ul style="list-style:none;padding:0;margin:0 0 38px;display:flex;flex-direction:column;gap:14px;">
+          <sc-for list="{{ moduPoints }}" as="pt" hint-placeholder-count="4">
+            <li style="display:flex;align-items:flex-start;gap:13px;font-size:15px;line-height:1.5;color:#15181B;">
+              <span style="width:18px;height:18px;background:#E00000;flex:none;margin-top:2px;display:flex;align-items:center;justify-content:center;color:#fff;font-size:11px;font-weight:800;">✓</span>
+              <span>{{ pt }}</span>
+            </li>
+          </sc-for>
+        </ul>
+        <a href="Products.dc.html" style="background:#15181B;color:#fff;text-decoration:none;font-family:'Archivo',sans-serif;font-weight:700;font-size:14px;letter-spacing:0.04em;text-transform:uppercase;padding:15px 26px;display:inline-block;" style-hover="background:#E00000;">{{ moduCta }}</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- WHY MPB -->
+  <section style="max-width:1280px;margin:0 auto;padding:88px 32px;">
+    <div style="display:flex;align-items:center;gap:13px;margin-bottom:18px;">
+      <span style="font-family:'IBM Plex Mono',monospace;font-weight:600;font-size:13px;color:#E00000;">04</span>
+      <span style="width:30px;height:2px;background:#E00000;"></span>
+      <span style="font-size:12px;font-weight:700;letter-spacing:0.12em;text-transform:uppercase;color:#8A949A;">{{ whyEyebrow }}</span>
+    </div>
+    <h2 style="font-family:'Archivo',sans-serif;font-weight:800;font-size:38px;line-height:1.05;margin:0 0 48px;max-width:680px;text-wrap:balance;">{{ whyTitle }}</h2>
+    <div style="display:grid;grid-template-columns:repeat(4,1fr);gap:2px;background:#E2E4E6;border:1px solid #E2E4E6;">
+      <sc-for list="{{ whyItems }}" as="w" hint-placeholder-count="4">
+        <div style="background:#fff;padding:34px 28px 38px;">
+          <div style="font-family:'Archivo',sans-serif;font-weight:900;font-size:34px;color:#E00000;line-height:1;margin-bottom:18px;">{{ w.num }}</div>
+          <h3 style="font-family:'Archivo',sans-serif;font-weight:700;font-size:18px;margin:0 0 11px;">{{ w.title }}</h3>
+          <p style="font-size:14px;line-height:1.65;color:#5A646B;margin:0;">{{ w.desc }}</p>
+        </div>
+      </sc-for>
+    </div>
+  </section>
+
+  <!-- INDUSTRIES -->
+  <section style="background:#15181B;color:#fff;">
+    <div style="max-width:1280px;margin:0 auto;padding:72px 32px;">
+      <div style="display:grid;grid-template-columns:0.8fr 1.2fr;gap:56px;align-items:center;">
+        <div>
+          <div style="display:flex;align-items:center;gap:13px;margin-bottom:18px;">
+            <span style="font-family:'IBM Plex Mono',monospace;font-weight:600;font-size:13px;color:#E00000;">05</span>
+            <span style="width:30px;height:2px;background:#E00000;"></span>
+            <span style="font-size:12px;font-weight:700;letter-spacing:0.12em;text-transform:uppercase;color:#9AA4AB;">{{ indEyebrow }}</span>
+          </div>
+          <h2 style="font-family:'Archivo',sans-serif;font-weight:800;font-size:34px;line-height:1.08;margin:0;color:#fff;">{{ indTitle }}</h2>
+        </div>
+        <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:2px;background:#2A3136;border:1px solid #2A3136;">
+          <sc-for list="{{ industries }}" as="i" hint-placeholder-count="6">
+            <div style="background:#15181B;padding:26px 20px;font-family:'Archivo',sans-serif;font-weight:700;font-size:16px;color:#E6EAEC;display:flex;align-items:center;min-height:90px;">{{ i }}</div>
+          </sc-for>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA BAND -->
+  <section style="background:#E00000;">
+    <div style="max-width:1280px;margin:0 auto;padding:66px 32px;display:flex;align-items:center;justify-content:space-between;gap:40px;flex-wrap:wrap;">
+      <div style="max-width:640px;">
+        <h2 style="font-family:'Archivo',sans-serif;font-weight:900;font-size:38px;line-height:1.04;color:#fff;margin:0 0 12px;text-wrap:balance;">{{ ctaTitle }}</h2>
+        <p style="font-size:17px;line-height:1.6;color:#FFD9D9;margin:0;">{{ ctaSub }}</p>
+      </div>
+      <div style="display:flex;gap:14px;flex-wrap:wrap;">
+        <a href="Contact.dc.html" style="background:#fff;color:#E00000;text-decoration:none;font-family:'Archivo',sans-serif;font-weight:800;font-size:15px;letter-spacing:0.03em;text-transform:uppercase;padding:18px 32px;" style-hover="background:#15181B;color:#fff;">{{ ctaBtn1 }}</a>
+        <a href="tel:+35929999999" style="background:transparent;color:#fff;text-decoration:none;font-family:'Archivo',sans-serif;font-weight:700;font-size:15px;letter-spacing:0.03em;text-transform:uppercase;padding:18px 32px;border:1px solid rgba(255,255,255,0.5);" style-hover="border-color:#fff;">{{ ctaBtn2 }}</a>
+      </div>
+    </div>
+  </section>
+
+  <dc-import name="Footer" hint-size="100%,400px"></dc-import>
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props="{&quot;$preview&quot;:{&quot;width&quot;:1280,&quot;height&quot;:900}}">
+const IMG = {
+  belt: "url('assets/conveyor.png')",
+  modu: "url('assets/modu.png')",
+  roller: "url('assets/roller.png')",
+  pv40: "url('assets/pv40.png')",
+  baukasten: "url('assets/workplace.png')",
+};
+
+const HSTR = {
+  bg: {
+    heroBadge: "Официален дистрибутор на BÖMA",
+    heroTitle: "Конвейерна техника и профилни системи от Австрия",
+    heroSub: "MPB доставя и поддържа цялата гама на BÖMA в България и Европа — модулни решения за транспорт, монтажни работни места и автоматизация, съобразени с вашето производство.",
+    heroCta1: "Заявка за оферта",
+    heroCta2: "Виж продуктите",
+    heroStats: [
+      { value: "Made in", label: "Австрия — производство BÖMA" },
+      { value: "ISO 9001", label: "Сертифицирано качество" },
+      { value: "100%", label: "Модулна, мащабируема система" },
+      { value: "BG + EU", label: "Доставка и сервиз" },
+    ],
+    introEyebrow: "Кои сме ние",
+    introTitle: "Вашият партньор за индустриален транспорт в България",
+    introBody: "Metal Parts Bulgaria е официален дистрибутор на BÖMA Maschinenbau und Automatisierung — австрийски специалист по конвейерна техника за щучни товари. Заедно с алуминиевата профилна конструкция изграждаме модулни решения: от обикновена транспортна лента до цели линии в производствени халета, с автоматизация. Проектираме спрямо вашите размери, скорости и ъгли — и осигуряваме местен сервиз и въвеждане в експлоатация.",
+    rangeEyebrow: "Продуктова гама",
+    rangeTitle: "Решения от един източник",
+    rangeLink: "Цялата гама →",
+    products: [
+      { tag: "MODU-SYSTEM", title: "Алуминиев конструктор", desc: "Профилни рамки и модули за безкрайни конфигурации.", bg: IMG.modu },
+      { tag: "КОНВЕЙЕРИ", title: "Конвейерни ленти", desc: "Лентови транспортьори за щучни товари по поръчка.", bg: IMG.belt },
+      { tag: "РОЛКОВИ", title: "Ролкови пътеки", desc: "Ускоряват работните процеси и повишават производителността.", bg: IMG.roller },
+      { tag: "ЛИНЕЙНА ТЕХНИКА", title: "Линейна техника", desc: "Прецизно линейно позициониране и движение.", bg: IMG.pv40 },
+      { tag: "РАБОТНО МЯСТО", title: "Монтажни работни места", desc: "Ергономични станции с кабелни канали и аксесоари.", bg: IMG.baukasten },
+      { tag: "БЕЗОПАСНОСТ", title: "Предпазни огради", desc: "Модулни ограждения за машини и зони.", bg: IMG.belt },
+    ],
+    moduEyebrow: "В центъра на вниманието",
+    moduTitle: "Modu-System — модулен конвейерен център от един източник",
+    moduBody: "Сърцето на гамата BÖMA: алуминиева профилна система, която се адаптира към вашите размери, скорости и ъгли. Комбинирайте модулите свободно — и разширявайте, когато производството ви расте.",
+    moduPoints: ["Профилни рамки до специални машини", "Адаптиране по размери, скорост и ъгъл", "Бърз монтаж с прецизни връзки PV-40", "Лесно разширяване и преконфигуриране"],
+    moduCta: "Разгледай Modu-System",
+    whyEyebrow: "Защо MPB",
+    whyTitle: "Австрийско качество, локална близост",
+    whyItems: [
+      { num: "01", title: "Оригинални части BÖMA", desc: "Само оригинални компоненти и пълна техническа документация." },
+      { num: "02", title: "Местна консултация", desc: "Технически обучен екип, който проектира решението с вас." },
+      { num: "03", title: "Сервиз и въвеждане", desc: "Монтаж, въвеждане в експлоатация и поддръжка на място." },
+      { num: "04", title: "Доставка в ЕС", desc: "Бърза логистика за България и цяла Европа." },
+    ],
+    indEyebrow: "Индустрии",
+    indTitle: "Доверие от водещи производствени сектори",
+    industries: ["Шприцоване на пластмаси", "Металообработка", "Автомобилостроене", "Фармация", "Хранителна индустрия", "Опаковки"],
+    ctaTitle: "Нуждаете се от решение за вашата линия?",
+    ctaSub: "Изпратете запитване и нашият екип ще проектира конфигурация по вашите изисквания.",
+    ctaBtn1: "Заявка за оферта",
+    ctaBtn2: "+359 2 999 99 99",
+  },
+  en: {
+    heroBadge: "Official BÖMA distributor",
+    heroTitle: "Conveyor technology & profile systems from Austria",
+    heroSub: "MPB supplies and services the full BÖMA range across Bulgaria and Europe — modular conveying, assembly workstations and automation, tailored to your production.",
+    heroCta1: "Request a quote",
+    heroCta2: "View products",
+    heroStats: [
+      { value: "Made in", label: "Austria — built by BÖMA" },
+      { value: "ISO 9001", label: "Certified quality" },
+      { value: "100%", label: "Modular, scalable system" },
+      { value: "BG + EU", label: "Delivery & service" },
+    ],
+    introEyebrow: "Who we are",
+    introTitle: "Your partner for industrial conveying in Bulgaria",
+    introBody: "Metal Parts Bulgaria is the official distributor of BÖMA Maschinenbau und Automatisierung — an Austrian specialist in conveyor technology for unit loads. Together with the aluminum profile construction kit we build modular solutions: from a simple conveyor belt to entire lines in production halls, with automation. We design to your dimensions, speeds and angles — and provide local service and commissioning.",
+    rangeEyebrow: "Product range",
+    rangeTitle: "Solutions from a single source",
+    rangeLink: "Full range →",
+    products: [
+      { tag: "MODU-SYSTEM", title: "Aluminum construction kit", desc: "Profile frames and modules for endless configurations.", bg: IMG.modu },
+      { tag: "CONVEYORS", title: "Conveyor belts", desc: "Belt conveyors for unit loads, made to order.", bg: IMG.belt },
+      { tag: "ROLLERS", title: "Roller conveyors", desc: "Speed up work processes and raise productivity.", bg: IMG.roller },
+      { tag: "LINEAR TECH", title: "Linear technology", desc: "Precise linear positioning and motion.", bg: IMG.pv40 },
+      { tag: "WORKPLACE", title: "Assembly workstations", desc: "Ergonomic stations with cable ducts and accessories.", bg: IMG.baukasten },
+      { tag: "SAFETY", title: "Protective fences", desc: "Modular guarding for machines and zones.", bg: IMG.belt },
+    ],
+    moduEyebrow: "In focus",
+    moduTitle: "Modu-System — modular conveyor center from one source",
+    moduBody: "The heart of the BÖMA range: an aluminum profile system that adapts to your dimensions, speeds and angles. Combine modules freely — and expand as your production grows.",
+    moduPoints: ["Profile frames to special machines", "Adapt by dimension, speed and angle", "Fast assembly with PV-40 precision connectors", "Easy to extend and reconfigure"],
+    moduCta: "Explore Modu-System",
+    whyEyebrow: "Why MPB",
+    whyTitle: "Austrian quality, local proximity",
+    whyItems: [
+      { num: "01", title: "Genuine BÖMA parts", desc: "Only original components and full technical documentation." },
+      { num: "02", title: "Local consulting", desc: "A technically trained team that designs the solution with you." },
+      { num: "03", title: "Service & commissioning", desc: "On-site installation, commissioning and maintenance." },
+      { num: "04", title: "EU delivery", desc: "Fast logistics for Bulgaria and across Europe." },
+    ],
+    indEyebrow: "Industries",
+    indTitle: "Trusted across leading manufacturing sectors",
+    industries: ["Injection molding", "Metalworking", "Automotive", "Pharmaceutical", "Food industry", "Packaging"],
+    ctaTitle: "Need a solution for your line?",
+    ctaSub: "Send an inquiry and our team will design a configuration to your requirements.",
+    ctaBtn1: "Request a quote",
+    ctaBtn2: "+359 2 999 99 99",
+  },
+};
+
+class Component extends DCLogic {
+  renderVals() {
+    const lang = ((typeof localStorage !== "undefined" && localStorage.getItem("mpb_lang")) || "bg") === "en" ? "en" : "bg";
+    return { ...HSTR[lang] };
+  }
+}
+</script>
+</body>
+</html>

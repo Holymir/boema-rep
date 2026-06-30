@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<footer style="font-family:'IBM Plex Sans',sans-serif;background:#15181B;color:#9AA4AB;">
+  <div style="height:3px;background:#E00000;"></div>
+  <div style="max-width:1280px;margin:0 auto;padding:64px 32px 40px;display:grid;grid-template-columns:1.4fr 1fr 1fr 1.2fr;gap:48px;">
+    <div>
+      <div style="display:flex;align-items:center;gap:12px;margin-bottom:18px;">
+        <span style="width:40px;height:40px;background:#E00000;display:flex;align-items:center;justify-content:center;color:#fff;font-family:'Archivo',sans-serif;font-weight:900;font-size:18px;">M</span>
+        <span style="display:flex;flex-direction:column;line-height:1;">
+          <span style="font-family:'Archivo',sans-serif;font-weight:800;font-size:20px;color:#fff;">MPB</span>
+          <span style="font-size:9px;font-weight:600;letter-spacing:0.16em;color:#6C757C;margin-top:4px;">METAL PARTS BULGARIA</span>
+        </span>
+      </div>
+      <p style="font-size:13.5px;line-height:1.7;max-width:300px;color:#9AA4AB;margin:0 0 18px;">{{ blurb }}</p>
+      <div style="display:inline-flex;align-items:center;gap:9px;border:1px solid #3A4146;padding:8px 13px;">
+        <span style="font-size:10px;font-weight:700;letter-spacing:0.12em;color:#6C757C;text-transform:uppercase;">{{ officialLabel }}</span>
+        <span style="font-family:'Archivo',sans-serif;font-weight:900;font-size:15px;color:#fff;letter-spacing:0.02em;">BÖMA</span>
+      </div>
+    </div>
+    <div>
+      <h4 style="font-family:'Archivo',sans-serif;font-weight:700;font-size:12px;letter-spacing:0.1em;text-transform:uppercase;color:#fff;margin:0 0 18px;">{{ colNav }}</h4>
+      <ul style="list-style:none;padding:0;margin:0;display:flex;flex-direction:column;gap:11px;">
+        <sc-for list="{{ navLinks }}" as="l" hint-placeholder-count="5">
+          <li><a href="{{ l.href }}" style="color:#9AA4AB;text-decoration:none;font-size:13.5px;" style-hover="color:#fff;">{{ l.label }}</a></li>
+        </sc-for>
+      </ul>
+    </div>
+    <div>
+      <h4 style="font-family:'Archivo',sans-serif;font-weight:700;font-size:12px;letter-spacing:0.1em;text-transform:uppercase;color:#fff;margin:0 0 18px;">{{ colRange }}</h4>
+      <ul style="list-style:none;padding:0;margin:0;display:flex;flex-direction:column;gap:11px;">
+        <sc-for list="{{ rangeLinks }}" as="l" hint-placeholder-count="5">
+          <li><a href="Products.dc.html" style="color:#9AA4AB;text-decoration:none;font-size:13.5px;" style-hover="color:#fff;">{{ l }}</a></li>
+        </sc-for>
+      </ul>
+    </div>
+    <div>
+      <h4 style="font-family:'Archivo',sans-serif;font-weight:700;font-size:12px;letter-spacing:0.1em;text-transform:uppercase;color:#fff;margin:0 0 18px;">{{ colContact }}</h4>
+      <div style="display:flex;flex-direction:column;gap:13px;font-size:13.5px;line-height:1.6;">
+        <div>{{ addr1 }}<br>{{ addr2 }}</div>
+        <a href="tel:+35929999999" style="color:#fff;text-decoration:none;font-weight:600;" style-hover="color:#E00000;">{{ phone }}</a>
+        <a href="mailto:office@metalparts.bg" style="color:#9AA4AB;text-decoration:none;" style-hover="color:#fff;">office@metalparts.bg</a>
+      </div>
+    </div>
+  </div>
+  <div style="border-top:1px solid #2A3136;">
+    <div style="max-width:1280px;margin:0 auto;padding:20px 32px;display:flex;align-items:center;justify-content:space-between;gap:24px;flex-wrap:wrap;">
+      <span style="font-size:12px;color:#6C757C;">{{ copyright }}</span>
+      <div style="display:flex;gap:22px;">
+        <sc-for list="{{ legalLinks }}" as="l" hint-placeholder-count="3">
+          <a href="#" style="font-size:12px;color:#6C757C;text-decoration:none;" style-hover="color:#fff;">{{ l }}</a>
+        </sc-for>
+      </div>
+    </div>
+  </div>
+</footer>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props="{&quot;$preview&quot;:{&quot;width&quot;:&quot;100%&quot;,&quot;height&quot;:360}}">
+const FSTR = {
+  bg: {
+    blurb: "Машиностроене и автоматизация от Австрия — конвейерна техника и алуминиеви профилни системи за малки производители и работилници в България и Европа.",
+    officialLabel: "Официален дистрибутор на",
+    colNav: "Навигация",
+    navLinks: [
+      { label: "Начало", href: "Index.dc.html" },
+      { label: "Продукти", href: "Products.dc.html" },
+      { label: "Решения", href: "Solutions.dc.html" },
+      { label: "За нас", href: "About.dc.html" },
+      { label: "Контакти", href: "Contact.dc.html" },
+    ],
+    colRange: "Продуктова гама",
+    rangeLinks: ["Modu-System конструктор", "Конвейерни ленти", "Ролкови пътеки", "BÖMA асансьори", "Предпазни огради"],
+    colContact: "Контакти",
+    addr1: "бул. Цариградско шосе 115",
+    addr2: "1784 София, България",
+    phone: "+359 2 999 99 99",
+    copyright: "© 2026 Metal Parts Bulgaria EOOD. Всички права запазени.",
+    legalLinks: ["Импресум", "Поверителност", "Общи условия"],
+  },
+  en: {
+    blurb: "Mechanical engineering and automation from Austria — conveyor technology and aluminum profile systems for small manufacturers and workshops across Bulgaria and Europe.",
+    officialLabel: "Official distributor of",
+    colNav: "Navigation",
+    navLinks: [
+      { label: "Home", href: "Index.dc.html" },
+      { label: "Products", href: "Products.dc.html" },
+      { label: "Solutions", href: "Solutions.dc.html" },
+      { label: "About", href: "About.dc.html" },
+      { label: "Contact", href: "Contact.dc.html" },
+    ],
+    colRange: "Product range",
+    rangeLinks: ["Modu-System construction kit", "Conveyor belts", "Roller conveyors", "BÖMA lifts", "Protective fences"],
+    colContact: "Contact",
+    addr1: "115 Tsarigradsko Shose Blvd.",
+    addr2: "1784 Sofia, Bulgaria",
+    phone: "+359 2 999 99 99",
+    copyright: "© 2026 Metal Parts Bulgaria EOOD. All rights reserved.",
+    legalLinks: ["Imprint", "Privacy policy", "Terms"],
+  },
+};
+
+class Component extends DCLogic {
+  renderVals() {
+    const lang = ((typeof localStorage !== "undefined" && localStorage.getItem("mpb_lang")) || "bg") === "en" ? "en" : "bg";
+    return { ...FSTR[lang] };
+  }
+}
+</script>
+</body>
+</html>

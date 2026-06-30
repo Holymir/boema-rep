@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Archivo:ital,wght@0,400;0,500;0,600;0,700;0,800;0,900&family=IBM+Plex+Sans:wght@400;500;600;700&family=IBM+Plex+Mono:wght@500;600&display=swap" rel="stylesheet">
+  <style>*{box-sizing:border-box;}body{margin:0;background:#fff;}</style>
+</helmet>
+<div style="font-family:'IBM Plex Sans',sans-serif;color:#15181B;background:#fff;">
+  <dc-import name="Header" active="solutions" hint-size="100%,112px"></dc-import>
+
+  <!-- PAGE HEAD with image -->
+  <section style="position:relative;background:#15181B;overflow:hidden;">
+    <div style="position:absolute;inset:0;background-image:url('assets/hero.png');background-size:cover;background-position:center;opacity:0.5;"></div>
+    <div style="position:absolute;inset:0;background:linear-gradient(90deg,#15181B 10%,rgba(21,24,27,0.55) 100%);"></div>
+    <div style="position:relative;max-width:1280px;margin:0 auto;padding:62px 32px 70px;">
+      <div style="display:flex;align-items:center;gap:10px;font-size:12.5px;color:#9AA4AB;margin-bottom:26px;">
+        <a href="Index.dc.html" style="color:#9AA4AB;text-decoration:none;" style-hover="color:#fff;">{{ crumbHome }}</a>
+        <span>/</span><span style="color:#E00000;font-weight:600;">{{ crumbHere }}</span>
+      </div>
+      <h1 style="font-family:'Archivo',sans-serif;font-weight:900;font-size:56px;line-height:0.98;letter-spacing:-0.02em;color:#fff;margin:0 0 22px;max-width:760px;text-wrap:balance;">{{ headTitle }}</h1>
+      <p style="font-size:18px;line-height:1.65;color:#C9D0D4;max-width:600px;margin:0;">{{ headSub }}</p>
+    </div>
+  </section>
+
+  <!-- SOLUTION CATEGORIES -->
+  <section style="max-width:1280px;margin:0 auto;padding:80px 32px 32px;">
+    <div style="display:flex;align-items:center;gap:13px;margin-bottom:18px;">
+      <span style="font-family:'IBM Plex Mono',monospace;font-weight:600;font-size:13px;color:#E00000;">01</span>
+      <span style="width:30px;height:2px;background:#E00000;"></span>
+      <span style="font-size:12px;font-weight:700;letter-spacing:0.12em;text-transform:uppercase;color:#8A949A;">{{ catEyebrow }}</span>
+    </div>
+    <h2 style="font-family:'Archivo',sans-serif;font-weight:800;font-size:38px;line-height:1.05;margin:0 0 44px;max-width:620px;text-wrap:balance;">{{ catTitle }}</h2>
+    <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:2px;background:#E2E4E6;border:1px solid #E2E4E6;">
+      <sc-for list="{{ categories }}" as="c" hint-placeholder-count="6">
+        <div style="background:#fff;padding:32px 28px 36px;display:flex;flex-direction:column;min-height:210px;" style-hover="background:#F4F5F6;">
+          <div style="font-family:'IBM Plex Mono',monospace;font-weight:600;font-size:12px;color:#E00000;margin-bottom:20px;">{{ c.idx }}</div>
+          <h3 style="font-family:'Archivo',sans-serif;font-weight:700;font-size:21px;margin:0 0 12px;line-height:1.1;">{{ c.title }}</h3>
+          <p style="font-size:14px;line-height:1.65;color:#5A646B;margin:0;">{{ c.desc }}</p>
+        </div>
+      </sc-for>
+    </div>
+  </section>
+
+  <!-- PROCESS -->
+  <section style="background:#F4F5F6;margin-top:80px;">
+    <div style="max-width:1280px;margin:0 auto;padding:80px 32px;">
+      <div style="display:flex;align-items:center;gap:13px;margin-bottom:18px;">
+        <span style="font-family:'IBM Plex Mono',monospace;font-weight:600;font-size:13px;color:#E00000;">02</span>
+        <span style="width:30px;height:2px;background:#E00000;"></span>
+        <span style="font-size:12px;font-weight:700;letter-spacing:0.12em;text-transform:uppercase;color:#8A949A;">{{ procEyebrow }}</span>
+      </div>
+      <h2 style="font-family:'Archivo',sans-serif;font-weight:800;font-size:38px;line-height:1.05;margin:0 0 48px;max-width:620px;text-wrap:balance;">{{ procTitle }}</h2>
+      <div style="display:grid;grid-template-columns:repeat(4,1fr);gap:24px;">
+        <sc-for list="{{ steps }}" as="s" hint-placeholder-count="4">
+          <div style="border-top:3px solid #E00000;padding-top:24px;">
+            <div style="font-family:'Archivo',sans-serif;font-weight:900;font-size:38px;color:#15181B;line-height:1;margin-bottom:16px;">{{ s.num }}</div>
+            <h3 style="font-family:'Archivo',sans-serif;font-weight:700;font-size:19px;margin:0 0 10px;">{{ s.title }}</h3>
+            <p style="font-size:14px;line-height:1.65;color:#5A646B;margin:0;">{{ s.desc }}</p>
+          </div>
+        </sc-for>
+      </div>
+    </div>
+  </section>
+
+  <!-- INDUSTRIES -->
+  <section style="max-width:1280px;margin:0 auto;padding:80px 32px;">
+    <div style="display:grid;grid-template-columns:0.8fr 1.2fr;gap:56px;align-items:center;">
+      <div>
+        <div style="display:flex;align-items:center;gap:13px;margin-bottom:18px;">
+          <span style="font-family:'IBM Plex Mono',monospace;font-weight:600;font-size:13px;color:#E00000;">03</span>
+          <span style="width:30px;height:2px;background:#E00000;"></span>
+          <span style="font-size:12px;font-weight:700;letter-spacing:0.12em;text-transform:uppercase;color:#8A949A;">{{ indEyebrow }}</span>
+        </div>
+        <h2 style="font-family:'Archivo',sans-serif;font-weight:800;font-size:32px;line-height:1.08;margin:0;">{{ indTitle }}</h2>
+      </div>
+      <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:2px;background:#E2E4E6;border:1px solid #E2E4E6;">
+        <sc-for list="{{ industries }}" as="i" hint-placeholder-count="6">
+          <div style="background:#fff;padding:26px 20px;font-family:'Archivo',sans-serif;font-weight:700;font-size:16px;color:#15181B;display:flex;align-items:center;min-height:90px;">{{ i }}</div>
+        </sc-for>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA -->
+  <section style="background:#E00000;">
+    <div style="max-width:1280px;margin:0 auto;padding:60px 32px;display:flex;align-items:center;justify-content:space-between;gap:40px;flex-wrap:wrap;">
+      <h2 style="font-family:'Archivo',sans-serif;font-weight:900;font-size:34px;color:#fff;margin:0;max-width:640px;text-wrap:balance;">{{ ctaTitle }}</h2>
+      <a href="Contact.dc.html" style="background:#fff;color:#E00000;text-decoration:none;font-family:'Archivo',sans-serif;font-weight:800;font-size:15px;letter-spacing:0.03em;text-transform:uppercase;padding:18px 32px;white-space:nowrap;" style-hover="background:#15181B;color:#fff;">{{ ctaBtn }}</a>
+    </div>
+  </section>
+
+  <dc-import name="Footer" hint-size="100%,400px"></dc-import>
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props="{&quot;$preview&quot;:{&quot;width&quot;:1280,&quot;height&quot;:900}}">
+const SSTR = {
+  bg: {
+    crumbHome: "Начало", crumbHere: "Решения",
+    headTitle: "Доставяме решения, изградени около вашето приложение",
+    headSub: "Разглеждаме себе си като търсач на решения за специфични проблеми в индустриалния транспорт на щучни товари — модулно подготвени и адаптивни.",
+    catEyebrow: "Категории решения",
+    catTitle: "От единична лента до цели производствени линии",
+    categories: [
+      { idx: "01", title: "Конвейерни ленти", desc: "Лентови транспортьори по поръчка за щучни товари — прави, наклонени и завиващи." },
+      { idx: "02", title: "Големи инсталации", desc: "Цели транспортни системи в производствени халета, включително автоматизация." },
+      { idx: "03", title: "Високоскоростен транспорт", desc: "Бързи конвейерни решения за висока пропускливост и темп на линията." },
+      { idx: "04", title: "Комбинирана техника", desc: "Съчетаване на различни конвейерни модули в единен, безпроблемен поток." },
+      { idx: "05", title: "Вакуумни конвейери", desc: "Сигурно задържане и транспорт на леки или нестабилни детайли." },
+      { idx: "06", title: "Циркулация на палети", desc: "Системи за циркулация на работни носители за такт и автоматизация." },
+    ],
+    procEyebrow: "Как работим",
+    procTitle: "Един партньор от идеята до сервиза",
+    steps: [
+      { num: "01", title: "Консултация", desc: "Анализираме приложението, размерите, скоростите и ъглите ви." },
+      { num: "02", title: "Проектиране", desc: "Конфигурираме модулно решение от системата BÖMA." },
+      { num: "03", title: "Производство", desc: "Сглобяване и тестване преди доставка." },
+      { num: "04", title: "Въвеждане и сервиз", desc: "Монтаж, въвеждане в експлоатация и поддръжка на място." },
+    ],
+    indEyebrow: "Индустрии",
+    indTitle: "Решения за широк спектър производства",
+    industries: ["Шприцоване на пластмаси", "Машиностроене", "Металообработка", "Автомобилостроене", "Фармация", "Химия", "Хранителна индустрия", "Опаковки", "Логистика"],
+    ctaTitle: "Опишете вашето приложение — ще предложим решение.",
+    ctaBtn: "Заявка за оферта",
+  },
+  en: {
+    crumbHome: "Home", crumbHere: "Solutions",
+    headTitle: "We deliver solutions built around your application",
+    headSub: "We see ourselves as a solution finder for application-specific problems in industrial conveyor technology for unit loads — modularly prepared and adaptable.",
+    catEyebrow: "Solution categories",
+    catTitle: "From a single belt to entire production lines",
+    categories: [
+      { idx: "01", title: "Conveyor belts", desc: "Made-to-order belt conveyors for unit loads — flat, inclined and curved." },
+      { idx: "02", title: "Large plants", desc: "Entire conveying systems in production halls, including automation." },
+      { idx: "03", title: "High-speed conveying", desc: "Fast conveyor solutions for high throughput and line cadence." },
+      { idx: "04", title: "Combined technology", desc: "Combining different conveyor modules into one seamless flow." },
+      { idx: "05", title: "Vacuum conveyors", desc: "Secure holding and transport of light or unstable parts." },
+      { idx: "06", title: "Carrier circulation", desc: "Workpiece carrier circulation systems for cadence and automation." },
+    ],
+    procEyebrow: "How we work",
+    procTitle: "One partner from concept to service",
+    steps: [
+      { num: "01", title: "Consultation", desc: "We analyze your application, dimensions, speeds and angles." },
+      { num: "02", title: "Engineering", desc: "We configure a modular solution from the BÖMA system." },
+      { num: "03", title: "Production", desc: "Assembly and testing before delivery." },
+      { num: "04", title: "Commissioning & service", desc: "On-site installation, commissioning and maintenance." },
+    ],
+    indEyebrow: "Industries",
+    indTitle: "Solutions across a wide range of manufacturing",
+    industries: ["Injection molding", "Mechanical engineering", "Metalworking", "Automotive", "Pharmaceutical", "Chemical", "Food industry", "Packaging", "Logistics"],
+    ctaTitle: "Describe your application — we'll propose a solution.",
+    ctaBtn: "Request a quote",
+  },
+};
+
+class Component extends DCLogic {
+  renderVals() {
+    const lang = ((typeof localStorage !== "undefined" && localStorage.getItem("mpb_lang")) || "bg") === "en" ? "en" : "bg";
+    return { ...SSTR[lang] };
+  }
+}
+</script>
+</body>
+</html>
