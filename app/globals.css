@@ -1,0 +1,25 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --container: 1280px;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  @apply bg-white text-ink font-sans antialiased;
+  overflow-x: hidden;
+}
+
+/* Shared eyebrow label used across sections (mono index + red rule). */
+.eyebrow {
+  @apply flex items-center gap-3 text-xs font-bold uppercase tracking-[0.12em] text-steel-500;
+}
+
+.section-container {
+  @apply mx-auto w-full max-w-container px-5 sm:px-8;
+}

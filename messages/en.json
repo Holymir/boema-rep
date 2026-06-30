@@ -1,0 +1,308 @@
+{
+  "Meta": {
+    "siteName": "MPB · Metal Parts Bulgaria",
+    "tagline": "Official BÖMA distributor · Bulgaria & Europe"
+  },
+  "Nav": {
+    "home": "Home",
+    "capabilities": "What we make",
+    "products": "Products",
+    "solutions": "Solutions",
+    "downloads": "Downloads",
+    "about": "About",
+    "contact": "Contact",
+    "requestQuote": "Request a quote"
+  },
+  "Header": {
+    "distributorLine": "Official BÖMA distributor · Bulgaria & Europe",
+    "phone": "+359 2 999 99 99",
+    "email": "office@metalparts.bg"
+  },
+  "Hero": {
+    "badge": "Official BÖMA distributor",
+    "title": "Precision metal machining & profile systems",
+    "subtitle": "MPB manufactures custom parts and supplies the full BÖMA range across Bulgaria and Europe — machining, welding, laser cutting and modular conveyor solutions, tailored to your production.",
+    "cta1": "Request a quote",
+    "cta2": "View products",
+    "videoAlt": "Shop-floor production video (placeholder — real footage coming soon)",
+    "stats": [
+      { "value": "0.01 mm", "label": "Machining tolerances" },
+      { "value": "ISO 9001", "label": "Certified quality" },
+      { "value": "Prototype → series", "label": "From a single part to series production" },
+      { "value": "BG + EU", "label": "Delivery & service" }
+    ]
+  },
+  "Intro": {
+    "eyebrow": "Who we are",
+    "title": "Your partner for precision machining and industrial conveying",
+    "body": "Metal Parts Bulgaria is a machine shop and the official distributor of BÖMA Maschinenbau und Automatisierung. We manufacture turned, milled, laser-cut and welded parts to order, and together with the aluminum profile construction kit we build modular conveying solutions — from a single part to entire lines in production halls."
+  },
+  "Capabilities": {
+    "eyebrow": "What we make",
+    "title": "A full spectrum of metalworking and assemblies",
+    "subtitle": "From prototype to series production — machining, cutting and finishing under one roof.",
+    "items": [
+      { "title": "Aluminum structural profiles", "desc": "Profile frames and load-bearing structures for machines and lines." },
+      { "title": "Machine frames", "desc": "Welded and assembled frames to drawing and application." },
+      { "title": "Conveyors", "desc": "Belt and roller conveyors, incl. rollers with integrated motor (motor-in-roller)." },
+      { "title": "Workbenches", "desc": "Ergonomic assembly stations with cable ducts and accessories." },
+      { "title": "Turned & milled parts", "desc": "CNC turning and milling with tolerances down to 0.01 mm." },
+      { "title": "Laser-cut & engraved parts", "desc": "Precise laser cutting and engraving of metal." },
+      { "title": "Finished parts", "desc": "Stainless, non-ferrous, powder-coated and anodized parts." },
+      { "title": "Custom assemblies", "desc": "Made-to-order assemblies and complete solutions." }
+    ]
+  },
+  "ProductRange": {
+    "eyebrow": "BÖMA product range",
+    "title": "Solutions from a single source",
+    "link": "Full range →",
+    "items": [
+      { "tag": "MODU-SYSTEM", "title": "Aluminum construction kit", "desc": "Profile frames and modules for endless configurations.", "image": "modu" },
+      { "tag": "CONVEYORS", "title": "Conveyor belts", "desc": "Belt conveyors for unit loads, made to order.", "image": "conveyor" },
+      { "tag": "ROLLERS", "title": "Roller conveyors", "desc": "Speed up work processes and raise productivity.", "image": "roller" },
+      { "tag": "LINEAR TECH", "title": "Linear technology", "desc": "Precise linear positioning and motion.", "image": "pv40" },
+      { "tag": "WORKPLACE", "title": "Assembly workstations", "desc": "Ergonomic stations with cable ducts and accessories.", "image": "workplace" },
+      { "tag": "SAFETY", "title": "Protective fences", "desc": "Modular guarding for machines and zones.", "image": "conveyor" }
+    ]
+  },
+  "Materials": {
+    "eyebrow": "Materials",
+    "title": "We work with a wide range of materials",
+    "items": [
+      "Steel",
+      "Stainless steel",
+      "Aluminum",
+      "Copper alloys",
+      "Plastics",
+      "Inconel",
+      "PLA / PETG"
+    ]
+  },
+  "Specs": {
+    "eyebrow": "Capabilities",
+    "title": "Precision and volume for every project",
+    "items": [
+      { "value": "down to 0.01 mm", "label": "Machining tolerances" },
+      { "value": "Prototypes", "label": "Single parts and rapid prototyping" },
+      { "value": "Small series", "label": "Flexible made-to-order production" },
+      { "value": "Large series", "label": "Series production with consistent quality" }
+    ]
+  },
+  "Equipment": {
+    "eyebrow": "Equipment & software",
+    "title": "In-house production and trusted partners",
+    "body": "We run most machining in-house and work with trusted external partners for specialized processes. We design and prepare production with modern CAD/CAM systems, and as an official partner of Boema.at we have direct access to Austrian engineering and genuine components.",
+    "software": ["Autodesk", "SolidWorks", "Inventor", "Creo", "AutoCAD"],
+    "partnerLabel": "In partnership with",
+    "partnerNote": "Official partner of Boema.at"
+  },
+  "Modu": {
+    "eyebrow": "In focus",
+    "title": "Modu-System — modular conveyor center from one source",
+    "body": "The heart of the BÖMA range: an aluminum profile system that adapts to your dimensions, speeds and angles. Combine modules freely — and expand as your production grows.",
+    "points": [
+      "Profile frames to special machines",
+      "Adapt by dimension, speed and angle",
+      "Fast assembly with PV-40 precision connectors",
+      "Easy to extend and reconfigure"
+    ],
+    "cta": "Explore Modu-System"
+  },
+  "Industries": {
+    "eyebrow": "Industries",
+    "title": "Trusted across leading manufacturing sectors",
+    "items": [
+      "Food & beverage",
+      "Automotive",
+      "Packaging",
+      "Transport",
+      "Machining",
+      "Advertising",
+      "Medical equipment"
+    ]
+  },
+  "Why": {
+    "eyebrow": "Why MPB",
+    "title": "Speed, quality and Austrian engineering, delivered locally",
+    "items": [
+      { "num": "01", "title": "Speed", "desc": "Fast lead times for prototypes and series production." },
+      { "num": "02", "title": "Quality", "desc": "Precision down to 0.01 mm and ISO 9001 certified production." },
+      { "num": "03", "title": "Hard-material expertise", "desc": "Experience with stainless, Inconel and non-ferrous metals." },
+      { "num": "04", "title": "EU-based", "desc": "Fast logistics for Bulgaria and across Europe, with English-speaking sales." }
+    ]
+  },
+  "Downloads": {
+    "eyebrow": "Catalogs & brochures",
+    "title": "Download documentation",
+    "empty": "Downloadable documents are coming soon.",
+    "items": [
+      { "title": "Modu-System catalog", "meta": "PDF · Aluminum kit" },
+      { "title": "Roller conveyors brochure", "meta": "PDF · Series production" },
+      { "title": "PV-40 connector flyer", "meta": "PDF · Precision tech" }
+    ]
+  },
+  "Rfq": {
+    "eyebrow": "Send an inquiry",
+    "title": "Request a quote & contact",
+    "subtitle": "Describe your application and our engineering team will get back to you with a proposal tailored to your requirements.",
+    "name": "Name",
+    "namePlaceholder": "Your name",
+    "company": "Company",
+    "companyPlaceholder": "Company name",
+    "email": "Email",
+    "emailPlaceholder": "you@company.com",
+    "phone": "Phone",
+    "phonePlaceholder": "+359 ...",
+    "interest": "Product / interest",
+    "interestOptions": [
+      "Precision machining (turning / milling)",
+      "Laser cutting",
+      "Modu-System kit",
+      "Conveyor belts",
+      "Roller conveyors",
+      "Linear technology / PV-40",
+      "Assembly workstations",
+      "Protective fences / lifts",
+      "Other"
+    ],
+    "message": "Description of your needs",
+    "messagePlaceholder": "Describe the application, dimensions, materials, tolerances, quantities...",
+    "file": "Attach a file (optional)",
+    "fileHint": "Accepts .step .stp .xt .pdf .jpg .jpeg — up to 20 MB",
+    "submit": "Send inquiry",
+    "sending": "Sending...",
+    "privacyNote": "By sending, you accept our privacy policy.",
+    "errorRequired": "Please fill in your name, a valid email and a description.",
+    "errorFile": "Unsupported file format or file too large.",
+    "errorServer": "Something went wrong while sending. Please try again or email us at office@metalparts.bg.",
+    "sentTitle": "Thank you — your inquiry is on its way!",
+    "sentBody": "We've received your inquiry. Our team will get back to you within one business day with a proposal.",
+    "sentButton": "New inquiry",
+    "officialLabel": "Official distributor of",
+    "addressLabel": "Address",
+    "address": "115 Tsarigradsko Shose Blvd.\n1784 Sofia, Bulgaria",
+    "phoneLabel": "Phone",
+    "emailLabel": "Email",
+    "hoursLabel": "Office hours",
+    "hours": [
+      { "day": "Monday – Friday", "time": "08:30 – 17:30" },
+      { "day": "Saturday – Sunday", "time": "Closed" }
+    ]
+  },
+  "Cta": {
+    "title": "Need a solution for your line?",
+    "subtitle": "Send an inquiry and our team will design a configuration to your requirements.",
+    "button1": "Request a quote",
+    "button2": "+359 2 999 99 99"
+  },
+  "Footer": {
+    "blurb": "Mechanical engineering and automation from Austria — precision machining, conveyor technology and aluminum profile systems for manufacturers and workshops across Bulgaria and Europe.",
+    "officialLabel": "Official distributor of",
+    "colNav": "Navigation",
+    "colRange": "Product range",
+    "rangeLinks": [
+      "Modu-System construction kit",
+      "Conveyor belts",
+      "Roller conveyors",
+      "BÖMA lifts",
+      "Protective fences"
+    ],
+    "colContact": "Contact",
+    "address1": "115 Tsarigradsko Shose Blvd.",
+    "address2": "1784 Sofia, Bulgaria",
+    "phone": "+359 2 999 99 99",
+    "email": "office@metalparts.bg",
+    "copyright": "© 2026 Metal Parts Bulgaria EOOD. All rights reserved.",
+    "privacy": "Privacy policy",
+    "terms": "Terms",
+    "imprint": "Imprint"
+  },
+  "Cookie": {
+    "message": "We use cookies for essential functions and — with your consent — for traffic analytics. You can accept or decline non-essential cookies.",
+    "accept": "Accept",
+    "decline": "Essential only",
+    "learnMore": "Learn more"
+  },
+  "Search": {
+    "label": "Search",
+    "placeholder": "Search products, services, catalogs...",
+    "noResults": "No results found.",
+    "resultsFor": "Results for",
+    "open": "Open search",
+    "close": "Close"
+  },
+  "Legal": {
+    "privacyTitle": "Privacy policy",
+    "termsTitle": "Terms & conditions",
+    "stubNotice": "This is a stub. The legal copy will be supplied separately and managed through the CMS."
+  },
+  "Pages": {
+    "home": "Home",
+    "capabilities": {
+      "title": "What we make",
+      "subtitle": "Precision metalworking, welding, laser cutting and finishing — from prototype to series production under one roof."
+    },
+    "products": {
+      "title": "The full BÖMA product range",
+      "subtitle": "From the Modu-System aluminum construction kit to conveyors, roller tracks, lifts and protective fences — available across Bulgaria and Europe through MPB."
+    },
+    "solutions": {
+      "title": "We deliver solutions built around your application",
+      "subtitle": "We see ourselves as a solution finder for application-specific problems in industrial conveyor technology for unit loads — modularly prepared and adaptable."
+    },
+    "about": {
+      "title": "The official voice of BÖMA in Bulgaria and Europe",
+      "subtitle": "Metal Parts Bulgaria connects Austrian mechanical engineering with local manufacturers — with engineering competence, genuine parts and close service."
+    },
+    "downloads": {
+      "title": "Catalogs & brochures",
+      "subtitle": "Download product catalogs, brochures and flyers. Managed through the CMS."
+    },
+    "contact": {
+      "title": "Request a quote & contact",
+      "subtitle": "Describe your application and our engineering team will get back to you with a proposal tailored to your requirements."
+    }
+  },
+  "Solutions": {
+    "catEyebrow": "Solution categories",
+    "catTitle": "From a single belt to entire production lines",
+    "categories": [
+      { "idx": "01", "title": "Conveyor belts", "desc": "Made-to-order belt conveyors for unit loads — flat, inclined and curved." },
+      { "idx": "02", "title": "Large plants", "desc": "Entire conveying systems in production halls, including automation." },
+      { "idx": "03", "title": "High-speed conveying", "desc": "Fast conveyor solutions for high throughput and line cadence." },
+      { "idx": "04", "title": "Combined technology", "desc": "Combining different conveyor modules into one seamless flow." },
+      { "idx": "05", "title": "Vacuum conveyors", "desc": "Secure holding and transport of light or unstable parts." },
+      { "idx": "06", "title": "Carrier circulation", "desc": "Workpiece carrier circulation systems for cadence and automation." }
+    ],
+    "procEyebrow": "How we work",
+    "procTitle": "One partner from concept to service",
+    "steps": [
+      { "num": "01", "title": "Consultation", "desc": "We analyze your application, dimensions, speeds and angles." },
+      { "num": "02", "title": "Engineering", "desc": "We configure a modular solution from the BÖMA system." },
+      { "num": "03", "title": "Production", "desc": "Assembly and testing before delivery." },
+      { "num": "04", "title": "Commissioning & service", "desc": "On-site installation, commissioning and maintenance." }
+    ]
+  },
+  "About": {
+    "storyEyebrow": "Our story",
+    "storyTitle": "Austrian engineering, delivered locally",
+    "storyP1": "MPB was founded to bring BÖMA's proven conveyor technology to Bulgarian and European manufacturers — without language barriers, long lead times or missing support.",
+    "storyP2": "As the official distributor we work directly with the factory in Alberschwende, Vorarlberg. That guarantees genuine components, up-to-date documentation and solutions engineered exactly for your application.",
+    "badgeLabel": "Official distributor of",
+    "stats": [
+      { "value": "1953", "label": "Year BÖMA was founded" },
+      { "value": "100%", "label": "Genuine parts and documentation" },
+      { "value": "BG+EU", "label": "Delivery and service coverage" },
+      { "value": "ISO", "label": "ISO 9001 certified production" }
+    ],
+    "valEyebrow": "What sets us apart",
+    "valTitle": "Principles behind every installation",
+    "values": [
+      { "idx": "01", "title": "Engineering competence", "desc": "A technically trained team that designs the solution with you — not just sells a catalog." },
+      { "idx": "02", "title": "Proximity and service", "desc": "A local contact, fast response, on-site installation and maintenance across Bulgaria and the EU." },
+      { "idx": "03", "title": "Quality without compromise", "desc": "Only genuine BÖMA components, manufactured to ISO 9001 in Austria." }
+    ],
+    "certTitle": "ISO 9001 certified quality",
+    "certBody": "The entire BÖMA range is manufactured in Alberschwende, Austria, under an ISO 9001 certified quality management system — a guarantee of precision, traceability and reliability in every component we deliver."
+  }
+}
