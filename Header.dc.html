@@ -11,18 +11,35 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Archivo:ital,wght@0,400;0,500;0,600;0,700;0,800;0,900&family=IBM+Plex+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <style>
+    .mpb-burger{display:none;}
+    .mpb-mpanel{display:none;}
+    @media (max-width:860px){
+      .mpb-uleft{display:none !important;}
+      .mpb-uemail{display:none !important;}
+      .mpb-navdesk{display:none !important;}
+      .mpb-ctadesk{display:none !important;}
+      .mpb-burger{display:flex !important;}
+      .mpb-mpanel.open{display:flex !important;}
+      .mpb-mainbar{height:62px !important;}
+      .mpb-util-inner{justify-content:flex-end !important;}
+    }
+    @media (max-width:520px){
+      .mpb-uphone{display:none !important;}
+    }
+  </style>
 </helmet>
 <header style="font-family:'IBM Plex Sans',sans-serif;position:sticky;top:0;z-index:50;">
   <!-- utility bar -->
   <div style="background:#15181B;color:#C9D0D4;">
-    <div style="max-width:1280px;margin:0 auto;padding:0 32px;height:38px;display:flex;align-items:center;justify-content:space-between;gap:24px;">
-      <div style="display:flex;align-items:center;gap:10px;font-size:12px;letter-spacing:0.04em;">
+    <div class="mpb-util-inner" style="max-width:1280px;margin:0 auto;padding:0 22px;min-height:38px;display:flex;align-items:center;justify-content:space-between;gap:18px;flex-wrap:wrap;">
+      <div class="mpb-uleft" style="display:flex;align-items:center;gap:10px;font-size:12px;letter-spacing:0.04em;">
         <span style="display:inline-block;width:7px;height:7px;background:#E00000;"></span>
         <span style="font-weight:600;color:#fff;">{{ distributorLine }}</span>
       </div>
-      <div style="display:flex;align-items:center;gap:22px;font-size:12.5px;">
-        <a href="tel:+35929999999" style="color:#C9D0D4;text-decoration:none;display:flex;align-items:center;gap:7px;font-weight:500;" style-hover="color:#fff;"><span style="color:#E00000;font-weight:700;">T</span>{{ phone }}</a>
-        <a href="mailto:office@metalparts.bg" style="color:#C9D0D4;text-decoration:none;font-weight:500;" style-hover="color:#fff;">{{ email }}</a>
+      <div style="display:flex;align-items:center;gap:18px;font-size:12.5px;">
+        <a class="mpb-uphone" href="tel:+35929999999" style="color:#C9D0D4;text-decoration:none;display:flex;align-items:center;gap:7px;font-weight:500;" style-hover="color:#fff;"><span style="color:#E00000;font-weight:700;">T</span>{{ phone }}</a>
+        <a class="mpb-uemail" href="mailto:office@metalparts.bg" style="color:#C9D0D4;text-decoration:none;font-weight:500;" style-hover="color:#fff;">{{ email }}</a>
         <div style="display:flex;align-items:center;gap:0;border:1px solid #3A4146;">
           <button onClick="{{ setBg }}" style="{{ bgBtnStyle }}">BG</button>
           <button onClick="{{ setEn }}" style="{{ enBtnStyle }}">EN</button>
@@ -32,7 +49,7 @@
   </div>
   <!-- main bar -->
   <div style="background:#fff;border-bottom:1px solid #E2E4E6;">
-    <div style="max-width:1280px;margin:0 auto;padding:0 32px;height:74px;display:flex;align-items:center;justify-content:space-between;gap:32px;">
+    <div class="mpb-mainbar" style="max-width:1280px;margin:0 auto;padding:0 22px;height:74px;display:flex;align-items:center;justify-content:space-between;gap:24px;">
       <a href="Index.dc.html" style="display:flex;align-items:center;gap:13px;text-decoration:none;">
         <span style="width:42px;height:42px;background:#E00000;display:flex;align-items:center;justify-content:center;color:#fff;font-family:'Archivo',sans-serif;font-weight:900;font-size:19px;letter-spacing:-0.03em;">M</span>
         <span style="display:flex;flex-direction:column;line-height:1;">
@@ -40,12 +57,27 @@
           <span style="font-size:9px;font-weight:600;letter-spacing:0.16em;color:#8A949A;margin-top:4px;">METAL PARTS BULGARIA</span>
         </span>
       </a>
-      <nav style="display:flex;align-items:center;gap:4px;">
+      <nav class="mpb-navdesk" style="display:flex;align-items:center;gap:4px;">
         <sc-for list="{{ nav }}" as="item" hint-placeholder-count="5">
           <a href="{{ item.href }}" style="{{ item.style }}" style-hover="color:#E00000;">{{ item.label }}</a>
         </sc-for>
       </nav>
-      <a href="Contact.dc.html" style="background:#E00000;color:#fff;text-decoration:none;font-family:'Archivo',sans-serif;font-weight:700;font-size:13px;letter-spacing:0.04em;text-transform:uppercase;padding:13px 22px;white-space:nowrap;" style-hover="background:#B80000;">{{ ctaLabel }}</a>
+      <a class="mpb-ctadesk" href="Contact.dc.html" style="background:#E00000;color:#fff;text-decoration:none;font-family:'Archivo',sans-serif;font-weight:700;font-size:13px;letter-spacing:0.04em;text-transform:uppercase;padding:13px 22px;white-space:nowrap;" style-hover="background:#B80000;">{{ ctaLabel }}</a>
+      <button class="mpb-burger" onClick="{{ toggleMenu }}" aria-label="Menu" style="width:46px;height:46px;border:1px solid #E2E4E6;background:#fff;cursor:pointer;flex-direction:column;align-items:center;justify-content:center;gap:5px;padding:0;flex:none;">
+        <span style="{{ bar1 }}"></span>
+        <span style="{{ bar2 }}"></span>
+        <span style="{{ bar3 }}"></span>
+      </button>
+    </div>
+  </div>
+  <!-- mobile dropdown panel -->
+  <div class="mpb-mpanel {{ panelCls }}" style="flex-direction:column;background:#fff;border-bottom:1px solid #E2E4E6;box-shadow:0 14px 24px -16px rgba(0,0,0,0.35);">
+    <sc-for list="{{ nav }}" as="item" hint-placeholder-count="5">
+      <a href="{{ item.href }}" style="{{ item.mstyle }}" style-hover="background:#F4F5F6;color:#E00000;">{{ item.label }}</a>
+    </sc-for>
+    <div style="padding:18px 22px 22px;display:flex;flex-direction:column;gap:12px;">
+      <a href="Contact.dc.html" style="background:#E00000;color:#fff;text-decoration:none;font-family:'Archivo',sans-serif;font-weight:700;font-size:14px;letter-spacing:0.04em;text-transform:uppercase;padding:15px 22px;text-align:center;" style-hover="background:#B80000;">{{ ctaLabel }}</a>
+      <a href="tel:+35929999999" style="color:#5A646B;text-decoration:none;font-size:14px;font-weight:600;text-align:center;">{{ phone }}</a>
     </div>
   </div>
 </header>
@@ -81,7 +113,10 @@ const STRINGS = {
 };
 
 class Component extends DCLogic {
-  state = { lang: (typeof localStorage !== "undefined" && localStorage.getItem("mpb_lang")) || "bg" };
+  state = {
+    lang: (typeof localStorage !== "undefined" && localStorage.getItem("mpb_lang")) || "bg",
+    menuOpen: false,
+  };
 
   setLang(l) {
     try { localStorage.setItem("mpb_lang", l); } catch (e) {}
@@ -89,31 +124,51 @@ class Component extends DCLogic {
     if (typeof location !== "undefined") location.reload();
   }
 
+  toggleMenu() { this.setState((s) => ({ menuOpen: !s.menuOpen })); }
+
   renderVals() {
     const lang = this.state.lang === "en" ? "en" : "bg";
     const t = STRINGS[lang];
     const active = this.props.active;
+    const open = this.state.menuOpen;
+
     const baseLink = {
       fontFamily: "'Archivo',sans-serif", fontWeight: 600, fontSize: "14px",
       letterSpacing: "0.01em", textDecoration: "none", padding: "10px 14px",
       color: "#3A4146", transition: "color .15s",
     };
+    const mBase = {
+      fontFamily: "'Archivo',sans-serif", fontWeight: 600, fontSize: "16px",
+      textDecoration: "none", padding: "16px 22px", color: "#15181B",
+      borderBottom: "1px solid #F0F1F2", display: "block",
+    };
     const nav = t.nav.map((n) => ({
       label: n.label, href: n.href,
       style: n.key === active ? { ...baseLink, color: "#E00000", fontWeight: 700 } : baseLink,
+      mstyle: n.key === active ? { ...mBase, color: "#E00000", fontWeight: 700, borderLeft: "3px solid #E00000" } : mBase,
     }));
+
     const tabBase = {
       fontFamily: "'Archivo',sans-serif", fontWeight: 700, fontSize: "12px",
       letterSpacing: "0.06em", padding: "6px 12px", border: "none", cursor: "pointer",
       background: "transparent", color: "#8A949A",
     };
     const tabActive = { ...tabBase, background: "#E00000", color: "#fff" };
+
+    const barBase = { display: "block", width: "22px", height: "2px", background: "#15181B", transition: "transform .2s, opacity .2s" };
+    const bar1 = open ? { ...barBase, transform: "translateY(7px) rotate(45deg)" } : barBase;
+    const bar2 = open ? { ...barBase, opacity: 0 } : barBase;
+    const bar3 = open ? { ...barBase, transform: "translateY(-7px) rotate(-45deg)" } : barBase;
+
     return {
       distributorLine: t.distributorLine, phone: t.phone, email: t.email, ctaLabel: t.cta,
       nav,
       setBg: () => this.setLang("bg"), setEn: () => this.setLang("en"),
       bgBtnStyle: lang === "bg" ? tabActive : tabBase,
       enBtnStyle: lang === "en" ? tabActive : tabBase,
+      toggleMenu: () => this.toggleMenu(),
+      panelCls: open ? "open" : "",
+      bar1, bar2, bar3,
     };
   }
 }

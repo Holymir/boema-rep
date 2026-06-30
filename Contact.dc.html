@@ -12,7 +12,9 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Archivo:ital,wght@0,400;0,500;0,600;0,700;0,800;0,900&family=IBM+Plex+Sans:wght@400;500;600;700&family=IBM+Plex+Mono:wght@500;600&display=swap" rel="stylesheet">
   <style>
-    *{box-sizing:border-box;}body{margin:0;background:#fff;}
+    *{box-sizing:border-box;}html,body{margin:0;background:#fff;overflow-x:hidden;max-width:100%;}
+    @media (max-width:860px){[style*="grid-template-columns"]{grid-template-columns:1fr !important;}[style*="repeat(4"]{grid-template-columns:repeat(2,1fr) !important;}h1{font-size:36px !important;line-height:1.05 !important;}h2{font-size:26px !important;line-height:1.12 !important;}}
+    @media (max-width:480px){[style*="repeat(4"]{grid-template-columns:1fr !important;}h1{font-size:30px !important;}}
     .mpb-input{font-family:'IBM Plex Sans',sans-serif;font-size:15px;color:#15181B;width:100%;padding:13px 14px;border:1px solid #D4D8DB;background:#fff;outline:none;transition:border-color .15s;}
     .mpb-input:focus{border-color:#E00000;}
     .mpb-input::placeholder{color:#A6AEB3;}

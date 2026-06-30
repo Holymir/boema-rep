@@ -11,7 +11,9 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Archivo:ital,wght@0,400;0,500;0,600;0,700;0,800;0,900&family=IBM+Plex+Sans:wght@400;500;600;700&family=IBM+Plex+Mono:wght@500;600&display=swap" rel="stylesheet">
-  <style>*{box-sizing:border-box;}body{margin:0;background:#fff;}</style>
+  <style>*{box-sizing:border-box;}html,body{margin:0;background:#fff;overflow-x:hidden;max-width:100%;}
+@media (max-width:860px){[style*="grid-template-columns"]{grid-template-columns:1fr !important;}[style*="repeat(4"]{grid-template-columns:repeat(2,1fr) !important;}h1{font-size:36px !important;line-height:1.05 !important;}h2{font-size:25px !important;line-height:1.12 !important;}}
+@media (max-width:480px){[style*="repeat(4"]{grid-template-columns:1fr !important;}h1{font-size:30px !important;}}</style>
 </helmet>
 <div style="font-family:'IBM Plex Sans',sans-serif;color:#15181B;background:#fff;">
   <dc-import name="Header" active="products" hint-size="100%,112px"></dc-import>
@@ -36,7 +38,7 @@
     <div style="display:grid;grid-template-columns:repeat(2,1fr);gap:2px;background:#E2E4E6;border:1px solid #E2E4E6;">
       <sc-for list="{{ products }}" as="p" hint-placeholder-count="6">
         <div style="background:#fff;display:grid;grid-template-columns:1fr 1fr;min-height:300px;">
-          <div style="background-color:#D8DCDF;background-image:{{ p.bg }};background-size:cover;background-position:center;"></div>
+          <div style="background-color:#D8DCDF;background-image:{{ p.bg }};background-size:cover;background-position:center;aspect-ratio:16/10;"></div>
           <div style="padding:34px 32px;display:flex;flex-direction:column;">
             <div style="font-family:'IBM Plex Mono',monospace;font-size:11px;font-weight:600;letter-spacing:0.08em;color:#E00000;margin-bottom:12px;">{{ p.tag }}</div>
             <h2 style="font-family:'Archivo',sans-serif;font-weight:700;font-size:23px;margin:0 0 11px;line-height:1.1;">{{ p.title }}</h2>

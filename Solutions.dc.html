@@ -11,7 +11,9 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Archivo:ital,wght@0,400;0,500;0,600;0,700;0,800;0,900&family=IBM+Plex+Sans:wght@400;500;600;700&family=IBM+Plex+Mono:wght@500;600&display=swap" rel="stylesheet">
-  <style>*{box-sizing:border-box;}body{margin:0;background:#fff;}</style>
+  <style>*{box-sizing:border-box;}html,body{margin:0;background:#fff;overflow-x:hidden;max-width:100%;}
+@media (max-width:860px){[style*="grid-template-columns"]{grid-template-columns:1fr !important;}[style*="repeat(4"]{grid-template-columns:repeat(2,1fr) !important;}h1{font-size:36px !important;line-height:1.05 !important;}h2{font-size:26px !important;line-height:1.12 !important;}}
+@media (max-width:480px){[style*="repeat(4"]{grid-template-columns:1fr !important;}h1{font-size:30px !important;}}</style>
 </helmet>
 <div style="font-family:'IBM Plex Sans',sans-serif;color:#15181B;background:#fff;">
   <dc-import name="Header" active="solutions" hint-size="100%,112px"></dc-import>
